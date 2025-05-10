@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "express": "^5.1.0",
+    "mysql2": "^3.14.1"
+  },
+  "name": "entregas-api",
+  "version": "1.0.0",
+  "description": "\"# Entregas - API\"",
+  "main": "apiFiltro_entregas.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnaPerchak123/api-entregas.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AnaPerchak123/api-entregas/issues"
+  },
+  "homepage": "https://github.com/AnaPerchak123/api-entregas#readme"
+}

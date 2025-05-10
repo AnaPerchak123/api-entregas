@@ -1,0 +1,83 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Entregas API",
+    "version": "1.0.0",
+    "description": "API simples para cadastro de entregas"
+  },
+  "paths": {
+    "/entregas": {
+      "get": {
+        "summary": "Lista todas as entregas cadastradas",
+        "responses": {
+          "200": {
+            "description": "Lista de entregas",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Entrega"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Adiciona uma nova entrega",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Entrega"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Entrega criada com sucesso"
+          },
+          "400": {
+            "description": "Dados inválidos"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Entrega": {
+        "type": "object",
+        "properties": {
+          "nome_cliente": {
+            "type": "string",
+            "example": "João da Silva"
+          },
+          "endereco_entrega": {
+            "type": "string",
+            "example": "Rua das Flores, 123"
+          },
+          "status": {
+            "type": "string",
+            "enum": ["pendente", "entregue"],
+            "example": "pendente"
+          },
+          "data_entrega": {
+            "type": "string",
+            "format": "date",
+            "example": "2025-05-10"
+          },
+          "motoboy": {
+            "type": "string",
+            "example": "Carlos Moto"
+          }
+        },
+        "required": ["nome_cliente", "endereco_entrega", "status", "data_entrega", "motoboy"]
+      }
+    }
+  }
+}
